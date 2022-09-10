@@ -7,6 +7,10 @@ export default function App() {
       <Text>Huy</Text>
       <Text>Test</Text>
       <StatusBar style="auto" />
+        
+        
+        <Text>Huy</Text>
+        <Text>Huy</Text>
     </View>
   );
 }
