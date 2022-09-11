@@ -4,7 +4,7 @@ import { Button, StyleSheet, Text, View } from 'react-native';
 export default function App() {
   return (
     <View style={styles.container}>
-      <Button>1234 readme</Button>
+      <Button>1234 readme dad ada dada</Button>
       <StatusBar style="auto" />
         
     </View>
