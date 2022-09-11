@@ -6,6 +6,8 @@ export default function App() {
     <View>
       <View style={styles.container}>
           <Button>1234 readme dad ada dada dadada dadadad</Button>
+          <Button>1234 readme dad ada dada dadada dadadad</Button>
+          <Button>1234 readme dad ada dada dadada dadadad</Button>
       </View>
       <View style={styles.container}>
           <Button>1234 readme dad ada dada dadada dadadad</Button>
