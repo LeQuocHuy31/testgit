@@ -3,8 +3,14 @@ import { Button, StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Button>1234 readme dad ada dada dadada dadadad</Button>
+    <View>
+      <View style={styles.container}>
+          <Button>1234 readme dad ada dada dadada dadadad</Button>
+      </View>
+      <View style={styles.container}>
+          <Button>1234 readme dad ada dada dadada dadadad</Button>
+          <StatusBar style="auto" />
+      </View>
     </View>
   );
 }
