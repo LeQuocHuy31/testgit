@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { Button, SafeAreaView, StyleSheet, Text, Touchable, TouchableWithoutFeedback, View } from 'react-native';
-import { bottompopup } from './bottompopup';
+import { Bottompopup } from './bottompopup';
 export default function App() {
   let popupRef = React.createRef();
 
@@ -17,10 +17,10 @@ export default function App() {
     <>
       <StatusBar barStyle="dark-content">
         <SafeAreaView style={styles.container}>
-          <TouchableWithoutFeedback>
+          <TouchableWithoutFeedback onPress={onShowPopup}>
             <Text style={styles.txtSize}>Show popup</Text>
           </TouchableWithoutFeedback>
-          <bottompopup ref={(target => popupRef = target)}
+          <Bottompopup ref={(target => popupRef = target)}
             onTouchOutside={onClosePopup}
           />
         </SafeAreaView>
@@ -36,6 +36,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   txtSize: {
-    fontSize: 20
+    fontSize: 20,
+    color:'black'
   }
 });

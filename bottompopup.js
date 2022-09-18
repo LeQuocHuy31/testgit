@@ -11,7 +11,7 @@ const data = [
         name: 'Task 2'
     }
 ]
-export class bottompopup extends React.Component {
+export class Bottompopup extends React.Component {
     constructor(props) {
         super(props)
             this.state = {
