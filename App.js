@@ -1,26 +1,41 @@
 import { StatusBar } from 'expo-status-bar';
-import { Button, StyleSheet, Text, View } from 'react-native';
-
+import React from 'react';
+import { Button, SafeAreaView, StyleSheet, Text, Touchable, TouchableWithoutFeedback, View } from 'react-native';
+import { bottompopup } from './bottompopup';
 export default function App() {
+  let popupRef = React.createRef();
+
+  const onShowPopup = () => {
+    popupRef.show();
+  }
+
+  const onClosePopup = () => {
+    popupRef.close();
+  }
+
   return (
-    <View>
-      <View style={styles.container}>
-          <Button>1234 readme dad ada dada dadada dadadad</Button>
-          <Text>hdaudyaud</Text>
-      </View>
-      <View style={styles.container}>
-          <Button>1234 readme dad ada dada dadada dadadad</Button>
-          <StatusBar style="auto" />
-      </View>
-    </View>
+    <>
+      <StatusBar barStyle="dark-content">
+        <SafeAreaView style={styles.container}>
+          <TouchableWithoutFeedback>
+            <Text style={styles.txtSize}>Show popup</Text>
+          </TouchableWithoutFeedback>
+          <bottompopup ref={(target => popupRef = target)}
+            onTouchOutside={onClosePopup}
+          />
+        </SafeAreaView>
+      </StatusBar>
+    </>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
   },
+  txtSize: {
+    fontSize: 20
+  }
 });
