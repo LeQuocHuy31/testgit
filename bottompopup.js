@@ -36,12 +36,26 @@ export class bottompopup extends React.Component {
             </TouchableWithoutFeedback>
         )
     }
+
     renderItem = ({item}) => {
-        return {
+        return (
             <View style={{height:50, flex: 1,alignItem:'center'}}>
                 <Text>{item.name}</Text>
             </View>
-        }
+        )
+    }
+
+    renderSeparator = () => {
+        return (
+            <View
+            style={{
+                opacity:0.1,
+                backgroundColor:'#18Af23',
+                height: 1
+            }}>
+
+            </View>
+        )
     }
     render() {
         let {show} = this.state.show;
@@ -54,7 +68,7 @@ export class bottompopup extends React.Component {
             onRequestClose={this.close}
             >
                 <View style={{
-                    flex=1,
+                    flex:1,
                     backgroundColor:'#000000AA',
                     justifyContent: 'flex-end'
                 }}>
@@ -84,6 +98,11 @@ export class bottompopup extends React.Component {
                                 data={data}
                                 renderItem={this.renderItem}
                                 extraData={data}
+                                keyExtractor={(item,index)=>index.toString()}
+                                ItemSeparatorComponent={this.rederSeparator}
+                                contentContainerStyle={{
+                                    paddingBottom: 40
+                                }}
                             ></FlatList>
                         </View>
                     </View>
